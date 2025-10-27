@@ -1,30 +1,61 @@
 <h1 align="center">
-SpectralUnmixing
+<br>
+<a href="https://github.com/emit-sds/SpectralUnmixing.jl"><img src="docs/src/assets/logo.svg" alt="SpectralUnmixing.jl" width="200"></a>
+<br>
+SpectralUnmixing.jl
+<br>
 </h1>
 
 
 [![version](https://github.com/emit-sds/SpectralUnmixing/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/emit-sds/SpectralUnmixing/actions/workflows/unit-tests.yml/)
 [![](https://img.shields.io/github/license/emit-sds/SpectralUnmixing)](https://github.com/emit-sds/SpectralUnmixing/blob/master/LICENSE)
-[![](https://img.shields.io/badge/docs-latest-blue)](https://emit-sds.github.io/SpectralUnmixing/dev/)
+[![](https://img.shields.io/badge/docs-latest-blue)](https://emit-sds.github.io/SpectralUnmixing.jl)
 
 A general, fast, flexible, and including spectral unmixing package.  Oriented towards VSWIR imaging spectroscopy data but applicable for different sensor types.  Includes options for different treatments of endmember library assemblages, including MESMA and bootstrapping (aka monte carlo) strategies.
 
 
 ## Installation
-This package is registered and may be added using:
-```
-julia 'using Pkg; Pkg.add("SpectralUnmixing")'
-```
-Remember to use the --project flag or to set the JULIA_PROJECT environment variable to activate the appropriate environment.
 
-If you would like to install a local version of the repository, first pull a local copy and navigate into the base SpectralUnmixing directory.  Then run:
+### Method 1: Julia Package Manager
 
-```
-julia --project='.' -e 'using Pkg; Pkg.activate(".");'
-export JULIA_PROJECT=${PWD}
-```
+This package is registered and can be added using the Julia package manager.
 
-## Using the script
+1. Install [Julia](https://julialang.org/install/)
+
+2. Install the package from the Julia Pkg REPL:
+
+    ```
+    $ julia
+    julia> ]
+    pkg> add SpectralUnmixing
+    ```
+
+    or equivalently from the command line,
+
+    ```
+    $ julia 'using Pkg; Pkg.add("SpectralUnmixing")'
+    ```
+
+    Remember to activate the appropriate [environment](https://pkgdocs.julialang.org/v1/) via the Pkg REPL, or by using the `--project` flag or setting the `JULIA_PROJECT` environment variable.
+
+3. Install the CLI script to your Julia depot:
+
+    ```
+    julia> using SpectralUnmixing
+    julia> CLI.install()
+    ```
+    Add the depot bin directory to your PATH to easily access the `unmix.jl` CLI script.
+
+### Method 2: Local install
+
+If you would like to install a local version of the repository, first clone a local copy and navigate into the base SpectralUnmixing directory.  Then run:
+```
+$ julia --project='.' -e 'using Pkg; Pkg.activate(".");'
+$ export JULIA_PROJECT=${PWD}
+```
+The CLI script can be called from the base directory.
+
+## Using the CLI script
 Currently the package supports reading and writing ENVI raster data.
 
 Basic:
