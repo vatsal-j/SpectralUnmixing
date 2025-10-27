@@ -38,12 +38,13 @@ This package is registered and can be added using the Julia package manager.
 
     Remember to activate the appropriate [environment](https://pkgdocs.julialang.org/v1/) via the Pkg REPL, or by using the `--project` flag or setting the `JULIA_PROJECT` environment variable.
 
-3. Install the CLI script:
+3. Install the CLI script to your Julia depot:
 
     ```
     julia> using SpectralUnmixing
     julia> CLI.install()
     ```
+    Add the depot bin directory to your PATH to easily access the `unmix.jl` CLI script.
 
 ### Method 2: Local install
 

@@ -25,6 +25,7 @@ function install(; dest_dir::String=joinpath(DEPOT_PATH[1], "bin"),
     end
     symlink(src, dest)
     println("Symlink created at $dest")
+    println("If not already, add $(dest_dir) to your PATH to use unmix.jl from the command line.")
 end
 
 end # module
